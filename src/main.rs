@@ -12,7 +12,7 @@ async fn main() {
 
     let root = warp::get().and(warp::path::end()).and(warp::fs::file(format!("{}/index.html", TEMPLATEDIRECTORY)));
 
-    let webroutes = content.or(root);
+    let webroutes = content.or(root).or(all_posts());
 
     warp::serve(webroutes).run(([127,0,0,1], 7900)).await;
 }
