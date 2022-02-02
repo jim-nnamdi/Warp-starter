@@ -1,3 +1,6 @@
+mod posts;
+mod collections;
+
 use warp::Filter;
 
 const TEMPLATEDIRECTORY : &str = "templates/";
